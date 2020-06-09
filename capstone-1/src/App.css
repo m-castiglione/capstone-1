@@ -47,11 +47,11 @@ header {
   position: relative;
   background-color: aqua;
   margin: 145px 50;
-  height: 210px;
+  height: 280px;
   box-shadow: 0 2px 15px #ccc;
   text-align: left;
   display: block;
-  width: 15%;
+  width: 45%;
 }
 
 .buyButton {

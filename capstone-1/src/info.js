@@ -6,7 +6,7 @@ const info = [
         "price": 59.99,
         "developer": "Naughty Dog",
         "category": "Video Game",
-        "stock": 10
+        "quantity": 10
     },
 
     {
@@ -16,7 +16,7 @@ const info = [
         "price": 59.99,
         "developer": "CD Projeck Red",
         "category":"Video Game",
-        "stock": 10
+        "quantity": 10
     },
 
     {
@@ -26,7 +26,7 @@ const info = [
         "price": 59.99,
         "developer": "Sucker Punch",
         "category": "Video Game",
-        "stock": 10
+        "quantity": 10
     },
     
     {
@@ -36,7 +36,7 @@ const info = [
         "price": 59.99,
         "developer": "Crystal Dynamics",
         "category":"Video Game",
-        "stock": 10
+        "quantity": 10
     },
 
     {
@@ -46,7 +46,7 @@ const info = [
         "price": 59.99,
         "developer": "Ubisoft",
         "category":"Video Game",
-        "stock": 10
+        "quantity": 10
     },
 
     {
@@ -56,7 +56,7 @@ const info = [
         "price": 59.99,
         "developer": "Ubisoft",
         "category":"Video Game",
-        "stock": 10
+        "quantity": 10
     },
 
     {
@@ -66,7 +66,7 @@ const info = [
         "price": 59.99,
         "developer": "Black Forest Games",
         "category": "Video Game",
-        "stock": 10
+        "quantity": 10
     },
 
     {
@@ -76,7 +76,7 @@ const info = [
         "price": 59.99,
         "developer": "Kaiko",
         "category":"Video Game",
-        "stock": 10
+        "quantity": 10
     },
 
     {
@@ -86,7 +86,7 @@ const info = [
         "price": 59.99,
         "developer": "TT Games",
         "category":"Video Game",
-        "stock": 10
+        "quantity": 10
     },
 
     {
@@ -96,7 +96,7 @@ const info = [
         "price": 59.99,
         "developer": "Hangar 13",
         "category": "Video Game",
-        "stock": 10
+        "quantity": 10
     }
 ];
 

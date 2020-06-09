@@ -14,6 +14,7 @@ function createItem(info) {
     price={info.price}
     developer={info.developer}
     category={info.category}
+    quantity={info.quantity} 
     />
 
       </center>
@@ -23,9 +24,10 @@ function createItem(info) {
 }
 
 function App() {
-
+ 
 function handleClick() {
   alert("Test!");
+  Stock.handleClick().quantity;
 }
 
   return (
