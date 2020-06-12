@@ -1,42 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Switch, Route} from 'react-router-dom';
 import './App.css';
 import info from './info';
-import Stock from './components/Stock';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from './components/Nav';
+import Details from './components/Details';
+import ProductList from './components/ProductList';
+import Cart from './components/Cart/Cart';
+import Default from './components/Default';
+import Widget from './components/Widget';
 
-function createItem(info) {
+class App extends Component {
+render() {
   return (
-    <div>
-      <center>
-      <Stock 
-    key={info.key}
-    title={info.title}
-    serialNumber={info.serialNumber}
-    price={info.price}
-    developer={info.developer}
-    category={info.category}
-    quantity={info.quantity} 
-    />
-
-      </center>
-
-    </div>
-  )
-}
-
-function App() {
- 
-function handleClick() {
-  alert("Test!");
-  Stock.handleClick().quantity;
-}
-
-  return (
-    <div className="App">
-      <header className="storeName"><h1>Matt's Game Shack</h1></header>
-        {info.map(createItem)}
-        <footer><button className="buyButton" onClick={handleClick}>Buy</button></footer>
-    </div>
+    <React.Fragment>
+      <Nav />
+      <Switch>
+        <Route exact path="/" component={ProductList}/>
+        <Route path="/details" component={Details}/>
+        <Route path="/cart" component={Cart}/>
+        <Route component={Default}/>
+      </Switch>
+      <Widget />
+    </React.Fragment>
   );
+  }
 }
 
 export default App;
