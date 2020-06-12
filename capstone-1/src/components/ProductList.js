@@ -14,16 +14,20 @@ export default class ProductList extends Component {
                  <div className="row">
                  <ProductConsumer>
                         {value => {
+                            if (value.search.length > 0) {
+                                return value.filterDisplay.map(product => {
+                                    return <Product key={product.id} product={product}/>        
+                            })} else {
                             return value.products.map(product => {
-                                return <Product key={product.id} product={product}
-                                />
-                            })
+                                return <Product key={product.id} product={product}/>
+                            })}
                         }}
                     </ProductConsumer>
                  </div>
                  </div>   
                 </div>
             </React.Fragment>
+                // <Product />
         );
     }
 }

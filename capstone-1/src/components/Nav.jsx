@@ -3,10 +3,15 @@ import {Link} from 'react-router-dom';
 import logo from '../mainlogo.svg'
 import styled from 'styled-components';
 import {ButtonContainer} from './Button';
+import {ProductConsumer} from './Context'
+import SearchBar from './Searchbar';
 
 class Nav extends Component {
   render() {
     return (
+      <ProductConsumer>
+        {(value) =>{ 
+          return(
       <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
        <Link to='/'>
         <img src={logo} alt="mainlogo" className="nav-logo"/> 
@@ -17,6 +22,7 @@ class Nav extends Component {
               Matt's Game Shack
             </Link>
           </li>
+          <SearchBar />
         </ul>
         <Link to="/cart" className="ml-auto" >
           <ButtonContainer>
@@ -26,7 +32,9 @@ class Nav extends Component {
             My Cart
           </ButtonContainer>
         </Link>
-      </NavWrapper>
+      </NavWrapper> 
+    )}}
+      </ProductConsumer>
     );
   }
 }

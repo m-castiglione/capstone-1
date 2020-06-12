@@ -12,7 +12,9 @@ class ProductProvider extends Component {
         widgetProduct: detailProduct,
         cartSubtotal: 0,
         cartTax: 0,
-        cartTotal:0
+        cartTotal:0,
+        filterDisplay:[],
+        search:""
     };
     componentDidMount() {
         this.setProducts();
@@ -135,6 +137,36 @@ class ProductProvider extends Component {
             }
         })
     }
+    handleInput = (input) => {
+        console.log(input)
+        this.setState(() => {
+           return {search:input}
+        }, this.handleSearch(input))
+    }
+
+   handleSearch = (e) => {
+        if (this.state.search !== "") {
+          let newList = [];
+          console.log(this.state.products);
+          this.state.products.map(product => {
+            const title = product.title.toLowerCase()
+            console.log(title);
+            const serial = product.serialNumber
+            console.log(this.state.search)
+              if (title.includes((this.state.search))) {
+                return newList.push(product)
+              }
+              else if (serial.toString().search(e)!== -1){
+                newList.push(product)
+              }
+              else if (serial.toString().search(e)!== -1){
+                newList.push(product)
+              }
+              else {console.log("nomatch")};
+          })
+          this.setState({filterDisplay:newList});
+        } 
+           }
     render() {
         return (
             <ProductContext.Provider value={{
@@ -146,7 +178,10 @@ class ProductProvider extends Component {
                 increment:this.increment,
                 decrement:this.decrement,
                 removeItem:this.removeItem,
-                clearCart:this.clearCart 
+                clearCart:this.clearCart,
+                // search:this.search,
+                handleSearch:this.handleSearch,
+                handleInput:this.handleInput 
             }}>
                 {this.props.children}
             </ProductContext.Provider>
